@@ -15,6 +15,6 @@ EXPOSE 3000
 
 COPY package.json yarn.lock ./
 RUN yarn install --production
-COPY --from=build ./dist/ ./dist/
+COPY --from=build /src/dist/ /app/dist/
 
 ENTRYPOINT [ "node", "dist/src/main.js" ]
